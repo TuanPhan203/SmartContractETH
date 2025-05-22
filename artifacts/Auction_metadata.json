@@ -9,12 +9,7 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "biddingMinutes",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "biddingSeconds",
+						"name": "_biddingTime",
 						"type": "uint256"
 					},
 					{
@@ -25,6 +20,19 @@
 				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "reason",
+						"type": "string"
+					}
+				],
+				"name": "AuctionCanceled",
+				"type": "event"
 			},
 			{
 				"anonymous": false,
@@ -106,7 +114,54 @@
 			},
 			{
 				"inputs": [],
-				"name": "getTimeRemaining",
+				"name": "cancelAuction",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "confirmDeliveryBySeller",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "confirmReceivedByWinner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "confirmationDeadline",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ended",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTimeLeft",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -150,6 +205,32 @@
 			},
 			{
 				"inputs": [],
+				"name": "sellerConfirmed",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "winnerConfirmed",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "withdraw",
 				"outputs": [
 					{
@@ -169,23 +250,7 @@
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {
-				"auctionEnd()": {
-					"notice": "Kết thúc phiên đấu giá"
-				},
-				"bid()": {
-					"notice": "Đặt giá"
-				},
-				"constructor": {
-					"notice": "Khởi tạo phiên đấu giá với số phút và giây."
-				},
-				"getTimeRemaining()": {
-					"notice": "❓ Xem còn lại bao nhiêu phút và giây"
-				},
-				"withdraw()": {
-					"notice": "Rút lại tiền nếu bị trả giá cao hơn"
-				}
-			},
+			"methods": {},
 			"version": 1
 		}
 	},
@@ -206,11 +271,11 @@
 	},
 	"sources": {
 		"Auction.sol": {
-			"keccak256": "0xaeb1755861d99a4e9d364155025897d496f795833c4991a9e051c8438f570bd4",
+			"keccak256": "0x98f6facbf8263cd15a163706c0de63723c7fbd2f70ff6c3d2f21bc206714d5ed",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://d0c083387de38dd674a6042cdc54b353df5c4e07f033d945610ddc9459bd02fa",
-				"dweb:/ipfs/QmQJXHkhWsxdihtfyNELrpwWNRpt8dDZ5vJL6LjSxxnJBx"
+				"bzz-raw://3d1f44ef9d34bd9d1341288efd39eb3ad784f706bc74c79ba738b8f6b359d91a",
+				"dweb:/ipfs/QmYVyQTUy7oVd2inRPEjrcxsQakjZ4SZLqCkcBDgoPSV4v"
 			]
 		}
 	},
